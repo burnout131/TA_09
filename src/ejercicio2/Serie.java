@@ -67,29 +67,31 @@ public class Serie implements Entregable{
 	@Override
 	public void entregar() {
 		// TODO Auto-generated method stub
-		
+		entregado = true;
 	}
 
 	@Override
 	public void devolver() {
 		// TODO Auto-generated method stub
-		
+		entregado = false;
 	}
 
 	@Override
 	public boolean isEntregado() {
 		// TODO Auto-generated method stub
-		return false;
+		return entregado;
 	}
 
 	@Override
-	public void compareTo(Object a) {
+	public int compareTo(Object a) {
 		// TODO Auto-generated method stub
-		
+		if (this.numeroTemporadas < ((Serie)a).numeroTemporadas) {
+			return -1;
+		} else if (this.numeroTemporadas > ((Serie)a).numeroTemporadas) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
-
-	
-	
-
 }
 
