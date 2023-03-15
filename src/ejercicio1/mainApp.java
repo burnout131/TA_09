@@ -3,8 +3,8 @@ package ejercicio1;
 public class mainApp {
 
 	public static void main(String[] args) {
-		int tamaño = 10;
-		Electrodomestico arrayElectrodomesticos[] = new Electrodomestico[tamaño];
+		int tamano = 10;
+		Electrodomestico arrayElectrodomesticos[] = new Electrodomestico[tamano];
 
 		arrayElectrodomesticos[0] = new Electrodomestico(150, "azul", 'E', 5);
 		arrayElectrodomesticos[1] = new Electrodomestico(250, "blanco", 'F', 84);
