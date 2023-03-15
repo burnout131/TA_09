@@ -60,8 +60,8 @@ public class Serie implements Entregable{
 
 	@Override
 	public String toString() {
-		return "Serie [getTitulo()=" + getTitulo() + ", getNumeroTemporadas()=" + getNumeroTemporadas()
-				+ ", getGenero()=" + getGenero() + ", getCreador()=" + getCreador() + "]";
+		return "Título: " + getTitulo() + ";\nNumero de Temporadas: " + getNumeroTemporadas()
+				+ ";\nGenero: " + getGenero() + ";\nCreador: " + getCreador() + ".";
 	}
 
 	@Override

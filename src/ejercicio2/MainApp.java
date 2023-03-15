@@ -2,7 +2,7 @@ package ejercicio2;
 
 public class MainApp {
 
-	public static void main(String args) {
+	public static void main(String[] args) {
 
 		Serie arraySerie[] = new Serie[5];
 
@@ -35,10 +35,10 @@ public class MainApp {
 		contadorSerie(arraySerie);
 		contadorVideojuego(arrayVideojuego);
 
+		masHoras(arrayVideojuego);
+		masTemporadas(arraySerie);
+
 	}
-	
-	
-	
 
 	public static void contadorSerie(Serie[] serieArray) {
 		int contadorSerie = 0;
@@ -47,8 +47,8 @@ public class MainApp {
 				contadorSerie++;
 				serieArray[i].devolver();
 			}
-			System.out.println("Hay " + contadorSerie + " series entregadas");
 		}
+		System.out.println("Hay " + contadorSerie + " series entregadas.");
 	}
 
 	public static void contadorVideojuego(Videojuego[] juegoArray) {
@@ -58,8 +58,29 @@ public class MainApp {
 				contadorJuego++;
 				juegoArray[i].devolver();
 			}
-			System.out.println("Hay " + contadorJuego + " videojuegos entregadas");
 		}
+		System.out.println("Hay " + contadorJuego + " videojuegos entregados.");
+	}
+
+	public static void masHoras(Videojuego[] juegoArray) {
+		Videojuego masHoras = juegoArray[0];
+		for (int i = 0; i < juegoArray.length; i++) {
+			if (juegoArray[i].compareTo(masHoras) > 0) {
+				masHoras = juegoArray[i];
+			}
+		}
+		System.out.println("\nEl videojugo con más horas de juego es:\n\n" + masHoras.toString());
+	}
+
+	public static void masTemporadas(Serie[] serieArray) {
+		Serie masTemporadas = serieArray[0];
+		for (int i = 0; i < serieArray.length; i++) {
+			if (serieArray[i].compareTo(masTemporadas) > 0) {
+				masTemporadas = serieArray[i];
+			}
+		}
+
+		System.out.println("\nLa série con más temporadas es:\n\n" + masTemporadas.toString());
 	}
 
 }
