@@ -10,6 +10,8 @@ public class Electrodomestico {
 
 	// Diccionario de datos (peso: precio)
 	protected Hashtable<Double, Double> pesoPrecio = new Hashtable<Double, Double>();
+
+	// Diccionario de datos (letra: precio)
 	protected Hashtable<Character, Double> letraPrecios = new Hashtable<>();
 
 	public Electrodomestico() {
@@ -128,6 +130,7 @@ public class Electrodomestico {
 		double precioFinal = this.precioBase;
 
 		crearLetraPrecios();
+		crearPesoPrecio();
 
 		switch (this.consumoEnergetico) {
 		case 'A':
@@ -150,7 +153,18 @@ public class Electrodomestico {
 			break;
 		}
 
-		// FALTARIA AUGMENTAR EL PRECIO FINAL SEGUN EL PESO/TAMAÑO
+		if(this.peso <= 19.0) {
+			precioFinal += pesoPrecio.get(19.0);
+		}
+		else if (this.peso <= 49.0) {
+			precioFinal += pesoPrecio.get(49.0);
+		}
+		else if (this.peso <= 79.0) {
+			precioFinal += pesoPrecio.get(79.0);
+		}
+		else { // Peso mayor o igual a 80
+			precioFinal += pesoPrecio.get(80.0);
+		}
 
 		return precioFinal;
 	}
