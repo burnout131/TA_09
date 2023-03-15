@@ -11,7 +11,7 @@ public class Videojuego implements Entregable {
 
 	}
 
-//prueba
+
 	public Videojuego(String titulo, double horasEstimadas) {
 		super();
 		this.titulo = titulo;
