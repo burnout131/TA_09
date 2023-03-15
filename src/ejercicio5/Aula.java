@@ -11,11 +11,11 @@ public class Aula {
 
 		for (Estudiante[] estudiantes : arrayEstudiante) {
 	        for (Estudiante estudiante : estudiantes) {
-	            if (disponibilidad(estudiante)) {
+	            if (estudiante.disponibilidad()) {
 	                for (Profesor[] profesores : arrayProfesor) {
 	                    for (Profesor profesor : profesores) {
-	                        if (profesor.materia == this.materia) {
-	                            if (disponibilidad(profesor)) {
+	                        if (profesor.getMateriaImpartida() == this.materia) {
+	                            if (profesor.disponibilidad()) {
 	                                return true;
 	                            }
 	                        }

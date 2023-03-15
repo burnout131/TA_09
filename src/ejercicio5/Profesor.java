@@ -14,4 +14,14 @@ public class Profesor extends Personas {
 		
 		return disponible;
 	}
+
+	public Materia getMateriaImpartida() {
+		return materiaImpartida;
+	}
+
+	public void setMateriaImpartida(Materia materiaImpartida) {
+		this.materiaImpartida = materiaImpartida;
+	}
+	
+	
 }
