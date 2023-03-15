@@ -1,11 +1,15 @@
 package ejercicio1;
 
+import java.util.Hashtable;
+
 public class Electrodomestico {
 	protected double precioBase;
 	protected String color;
 	protected char consumoEnergetico;
 	protected double peso;
 
+	protected Hashtable<Character, Double> letraPrecios = new Hashtable<>();
+	
 	public Electrodomestico() {
 		this(100, "blanco", 'F', 5);
 	}
@@ -77,8 +81,6 @@ public class Electrodomestico {
 		}
 
 	}
-<<<<<<< HEAD
-=======
 	
 	public void comprobarColor(String color) {
 		switch (color.toLowerCase()) {
@@ -98,10 +100,49 @@ public class Electrodomestico {
 			this.color = "gris";
 			break;
 		default:
-			System.out.println("El color introducido no es válido.");
+			System.out.println("El color introducido no es vï¿½lido.");
 			break;
 		}
 	}
+
+	private void crearLetraPrecios() {
+		this.letraPrecios.put('A', 100.0);
+		this.letraPrecios.put('B', 80.0);
+		this.letraPrecios.put('C', 60.0);
+		this.letraPrecios.put('D', 50.0);
+		this.letraPrecios.put('E', 30.0);
+		this.letraPrecios.put('F', 10.0);
+	}
 	
->>>>>>> dfc017ad890115a3ff193103519239e590d28927
+	public double precioFinal() {
+		double precioFinal = this.precioBase;
+		
+		crearLetraPrecios();
+
+		switch (this.consumoEnergetico) {
+		case 'A':
+			precioFinal += letraPrecios.get('A');
+			break;
+		case 'B':
+			precioFinal += letraPrecios.get('B');
+			break;
+		case 'C':
+			precioFinal += letraPrecios.get('C');
+			break;
+		case 'D':
+			precioFinal += letraPrecios.get('D');
+			break;
+		case 'E':
+			precioFinal += letraPrecios.get('E');
+			break;
+		case 'F':
+			precioFinal += letraPrecios.get('F');
+			break;
+		}
+		
+		// FALTARIA AUGMENTAR EL PRECIO FINAL SEGUN EL PESO/TAMAÃ‘O
+
+
+		return precioFinal;
+	}
 }
