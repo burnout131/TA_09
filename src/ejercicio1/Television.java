@@ -30,7 +30,7 @@ public class Television extends Electrodomestico {
 	
 	@Override
 	public double precioFinal(Double resolucion) {
-		if(resolucion > 50) {
+		if(resolucion > 40) {
 			precioBase += precioBase + (0.3 * 100);
 		}
 		
