@@ -8,8 +8,10 @@ public class Electrodomestico {
 	protected char consumoEnergetico;
 	protected double peso;
 
+	// Diccionario de datos (peso: precio)
+	protected Hashtable<Double, Double> pesoPrecio = new Hashtable<Double, Double>();
 	protected Hashtable<Character, Double> letraPrecios = new Hashtable<>();
-	
+
 	public Electrodomestico() {
 		this(100, "blanco", 'F', 5);
 	}
@@ -81,7 +83,7 @@ public class Electrodomestico {
 		}
 
 	}
-	
+
 	public void comprobarColor(String color) {
 		switch (color.toLowerCase()) {
 		case "blanco":
@@ -105,7 +107,7 @@ public class Electrodomestico {
 		}
 	}
 
-	private void crearLetraPrecios() {
+	protected void crearLetraPrecios() {
 		this.letraPrecios.put('A', 100.0);
 		this.letraPrecios.put('B', 80.0);
 		this.letraPrecios.put('C', 60.0);
@@ -113,10 +115,18 @@ public class Electrodomestico {
 		this.letraPrecios.put('E', 30.0);
 		this.letraPrecios.put('F', 10.0);
 	}
-	
+
+	protected void crearPesoPrecio() {
+		this.pesoPrecio.put(19.0, 10.0);
+		this.pesoPrecio.put(49.0, 50.0);
+		this.pesoPrecio.put(79.0, 80.0);
+		this.pesoPrecio.put(80.0, 100.0);
+
+	}
+
 	public double precioFinal() {
 		double precioFinal = this.precioBase;
-		
+
 		crearLetraPrecios();
 
 		switch (this.consumoEnergetico) {
@@ -139,9 +149,8 @@ public class Electrodomestico {
 			precioFinal += letraPrecios.get('F');
 			break;
 		}
-		
-		// FALTARIA AUGMENTAR EL PRECIO FINAL SEGUN EL PESO/TAMAÑO
 
+		// FALTARIA AUGMENTAR EL PRECIO FINAL SEGUN EL PESO/TAMAÑO
 
 		return precioFinal;
 	}
