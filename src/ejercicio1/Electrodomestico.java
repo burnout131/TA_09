@@ -126,8 +126,8 @@ public class Electrodomestico {
 
 	}
 
-	public double precioFinal() {
-		double precioFinal = this.precioBase;
+	public double precioFinal(Double precioBase) {
+		double precioFinal = precioBase;
 
 		crearLetraPrecios();
 		crearPesoPrecio();
