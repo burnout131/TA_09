@@ -1,10 +1,10 @@
 package ejercicio1;
 
-public class mainApp {
+public class MainApp {
 
 	public static void main(String[] args) {
-		int tamano = 10;
-		Electrodomestico arrayElectrodomesticos[] = new Electrodomestico[tamano];
+		
+		Electrodomestico arrayElectrodomesticos[] = new Electrodomestico[10];
 
 		arrayElectrodomesticos[0] = new Electrodomestico(150, "azul", 'E', 5);
 		arrayElectrodomesticos[1] = new Electrodomestico(250, "blanco", 'F', 84);

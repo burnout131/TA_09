@@ -36,6 +36,9 @@ public class MainApp {
 		contadorVideojuego(arrayVideojuego);
 
 	}
+	
+	
+	
 
 	public static void contadorSerie(Serie[] serieArray) {
 		int contadorSerie = 0;
