@@ -4,8 +4,8 @@ public class Profesor extends Personas {
 
 	private Materia materiaImpartida;
 
-	public Profesor(Materia materia) {
-		super();
+	public Profesor(String nombre, int edad, Genero genero, Materia materia) {
+		super(nombre, edad, genero);
 		this.materiaImpartida = materia;
 	}
 

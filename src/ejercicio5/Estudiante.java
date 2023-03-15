@@ -4,8 +4,8 @@ public class Estudiante extends Personas {
 
 	private double nota;
 
-	public Estudiante(double nota) {
-		super();
+	public Estudiante(String nombre, int edad, Genero genero, double nota) {
+		super(nombre, edad, genero);
 		this.nota = nota;
 	}
 
