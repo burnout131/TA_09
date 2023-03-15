@@ -1,13 +1,7 @@
 package ejercicio5;
 
 public class Profesor extends Personas {
-	
-	enum Materia {
-		MATEMATICAS,
-		FILOSOFIA,
-		FISICA
-	}
-	
+		
 	private Materia materiaImpartida;
 	
 	@Override
