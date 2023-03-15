@@ -5,15 +5,15 @@ public class Electrodomestico {
 	protected String color;
 	protected char consumoEnergetico;
 	protected double peso;
-	
+
 	public Electrodomestico() {
-		this (100, "blanco", 'F', 5);
+		this(100, "blanco", 'F', 5);
 	}
-	
+
 	public Electrodomestico(double precioBase, double peso) {
-		this (precioBase, "blanco", 'F', peso);
+		this(precioBase, "blanco", 'F', peso);
 	}
-	
+
 	public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
 		this.precioBase = precioBase;
 		this.color = color;
@@ -41,7 +41,6 @@ public class Electrodomestico {
 		return consumoEnergetico;
 	}
 
-	
 	public double getPeso() {
 		return peso;
 	}
@@ -49,28 +48,33 @@ public class Electrodomestico {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	
+
 	public void setConsumoEnergetico(char consumoEnergetico) {
 
-		String opcion = Character.toString(consumoEnergetico).toUpperCase();
+		this.consumoEnergetico = consumoEnergetico;
+
+	}
+
+	protected static void comprobarConsumoEnergetico(char consumo) {
+
+		String opcion = Character.toString(consumo).toUpperCase();
 		switch (opcion) {
 		case "A":
-			this.consumoEnergetico = 'A';
+			consumo = 'A';
 			break;
 		case "B":
-			this.consumoEnergetico = 'B';
+			consumo = 'B';
 		case "C":
-			this.consumoEnergetico = 'C';
+			consumo = 'C';
 		case "D":
-			this.consumoEnergetico = 'D';
+			consumo = 'D';
 		case "E":
-			this.consumoEnergetico = 'E';
+			consumo = 'E';
 		case "F":
-			this.consumoEnergetico = 'F';
+			consumo = 'F';
 		default:
 			System.out.println("El caracter introducido no es correcto.");
 		}
 
 	}
-	
 }
