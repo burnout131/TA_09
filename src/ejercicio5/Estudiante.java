@@ -28,5 +28,10 @@ public class Estudiante extends Personas {
 		return disponible;
 	}
 
+	@Override
+	public String toString() {
+		return "Estudiante [nota=" + nota + ", toString()=" + super.toString() + "]";
+	}
+
 }
 
