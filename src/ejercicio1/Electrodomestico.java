@@ -1,10 +1,10 @@
 package ejercicio1;
 
 public class Electrodomestico {
-	private double precioBase;
-	private String color;
-	private char consumoEnergetico;
-	private double peso;
+	protected double precioBase;
+	protected String color;
+	protected char consumoEnergetico;
+	protected double peso;
 	
 	public Electrodomestico() {
 		this (100, "blanco", 'F', 5);
@@ -41,16 +41,36 @@ public class Electrodomestico {
 		return consumoEnergetico;
 	}
 
-	public void setConsumoEnergetico(char consumoEnergetico) {
-		this.consumoEnergetico = consumoEnergetico;
-	}
-
+	
 	public double getPeso() {
 		return peso;
 	}
 
 	public void setPeso(double peso) {
 		this.peso = peso;
+	}
+	
+	public void setConsumoEnergetico(char consumoEnergetico) {
+
+		String opcion = Character.toString(consumoEnergetico).toUpperCase();
+		switch (opcion) {
+		case "A":
+			this.consumoEnergetico = 'A';
+			break;
+		case "B":
+			this.consumoEnergetico = 'B';
+		case "C":
+			this.consumoEnergetico = 'C';
+		case "D":
+			this.consumoEnergetico = 'D';
+		case "E":
+			this.consumoEnergetico = 'E';
+		case "F":
+			this.consumoEnergetico = 'F';
+		default:
+			System.out.println("El caracter introducido no es correcto.");
+		}
+
 	}
 	
 }
