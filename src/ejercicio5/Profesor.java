@@ -1,17 +1,22 @@
 package ejercicio5;
 
 public class Profesor extends Personas {
-		
+
 	private Materia materiaImpartida;
-	
+
+	public Profesor(String nombre, int edad, Genero genero, Materia materia) {
+		super(nombre, edad, genero);
+		this.materiaImpartida = materia;
+	}
+
 	@Override
 	public boolean disponibilidad() {
 		boolean disponible = true;
 
-		if((int) (Math.random() * 5) >= 4) { // 20% probabilidad
+		if ((int) (Math.random() * 5) >= 4) { // 20% probabilidad
 			disponible = false;
 		}
-		
+
 		return disponible;
 	}
 
@@ -22,6 +27,5 @@ public class Profesor extends Personas {
 	public void setMateriaImpartida(Materia materiaImpartida) {
 		this.materiaImpartida = materiaImpartida;
 	}
-	
-	
+
 }
