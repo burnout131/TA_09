@@ -1,15 +1,14 @@
 package ejercicio2;
 
-public class Videojuego implements Entregable{
+public class Videojuego implements Entregable {
 	protected String titulo;
 	protected double horasEstimadas = 10;
 	protected boolean entregado = false;
 	protected String genero;
 	protected String compañia;
-	
-	
+
 	public Videojuego() {
-		
+
 	}
 
 //prueba
@@ -19,7 +18,6 @@ public class Videojuego implements Entregable{
 		this.horasEstimadas = horasEstimadas;
 	}
 
-
 	public Videojuego(String titulo, double horasEstimadas, String genero, String compañia) {
 		super();
 		this.titulo = titulo;
@@ -28,46 +26,37 @@ public class Videojuego implements Entregable{
 		this.compañia = compañia;
 	}
 
-
 	public String getTitulo() {
 		return titulo;
 	}
-
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
-
 	public double getHorasEstimadas() {
 		return horasEstimadas;
 	}
-
 
 	public void setHorasEstimadas(double horasEstimadas) {
 		this.horasEstimadas = horasEstimadas;
 	}
 
-
 	public String getGenero() {
 		return genero;
 	}
-
 
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 
-
 	public String getCompañia() {
 		return compañia;
 	}
 
-
 	public void setCompañia(String compañia) {
 		this.compañia = compañia;
 	}
-
 
 	@Override
 	public String toString() {
@@ -75,36 +64,28 @@ public class Videojuego implements Entregable{
 				+ ", getGenero()=" + getGenero() + ", getCompañia()=" + getCompañia() + "]";
 	}
 
-
 	@Override
 	public void entregar() {
-		// TODO Auto-generated method stub
-		
+		entregado = true;
 	}
-
 
 	@Override
 	public void devolver() {
-		// TODO Auto-generated method stub
-		
+		entregado = false;
 	}
-
 
 	@Override
 	public boolean isEntregado() {
-		// TODO Auto-generated method stub
-		return false;
+		return entregado;
 	}
-
 
 	@Override
-	public void compareTo(Object a) {
-		// TODO Auto-generated method stub
-		
+	public int compareTo(Object a) {
+		if (this.horasEstimadas < ((Videojuego)a).horasEstimadas)
+			return -1;
+		else if (this.horasEstimadas > ((Videojuego)a).horasEstimadas)
+			return 1;
+		else
+			return 0;
 	}
-	
-	
-	
-	
-
 }
