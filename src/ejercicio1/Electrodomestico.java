@@ -73,4 +73,27 @@ public class Electrodomestico {
 
 	}
 	
+	public void comprobarColor(String color) {
+		switch (color.toLowerCase()) {
+		case "blanco":
+			this.color = "blanco";
+			break;
+		case "negro":
+			this.color = "negro";
+			break;
+		case "rojo":
+			this.color = "rojo";
+			break;
+		case "azul":
+			this.color = "azul";
+			break;
+		case "gris":
+			this.color = "gris";
+			break;
+		default:
+			System.out.println("El color introducido no es válido.");
+			break;
+		}
+	}
+	
 }
