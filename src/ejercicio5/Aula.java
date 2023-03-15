@@ -18,11 +18,7 @@ public class Aula {
 
 	}
 
-	@Override
-	public String toString() {
-		return "Aula [idAula=" + idAula + ", maxEstudiantes=" + maxEstudiantes + ", materia=" + materia
-				+ ", toString()=" + super.toString() + "]";
-	}
+	
 
 	public boolean darClase(ArrayList<Profesor> arrayProfesor, ArrayList<Estudiante> arrayEstudiante) {
 
@@ -33,7 +29,7 @@ public class Aula {
 					if (profesor.getMateriaImpartida() == this.materia) {
 						if (profesor.disponibilidad()) {
 							System.out.println(profesor.toString());
-							System.out.println("Aula "+ idAula+" abierta correctamente.");
+							System.out.println("Aula "+ idAula+" abierta correctamente para la asigntatura de "+ materia+".");
 							System.out.println("\nESTUDIANTES APROBADOS:\n"+mostrarAprobados(arrayEstudiante));
 							System.out.println("--------------------------------------------------------\n");
 							return true;
