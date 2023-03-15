@@ -6,6 +6,12 @@ public class Aula {
 	private int idAula;
 	private int maxEstudiantes;
 	Materia materia;
+	
+	public Aula(int idAula, int maxEstudiantes, Materia materia) {
+		this.idAula = idAula;
+		this.maxEstudiantes = maxEstudiantes;
+		this.materia = materia;
+	}
 
 	public boolean darClase(ArrayList<Profesor[]> arrayProfesor, ArrayList<Estudiante[]> arrayEstudiante) {
 
