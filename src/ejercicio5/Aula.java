@@ -17,38 +17,43 @@ public class Aula {
 	public Aula() {
 
 	}
+	
+	
+	
 
-	public boolean darClase(ArrayList<Profesor[]> arrayProfesor, ArrayList<Estudiante[]> arrayEstudiante) {
+	@Override
+	public String toString() {
+		return "Aula [idAula=" + idAula + ", maxEstudiantes=" + maxEstudiantes + ", materia=" + materia
+				+ ", toString()=" + super.toString() + "]";
+	}
 
-		for (Estudiante[] estudiantes : arrayEstudiante) {
-			for (Estudiante estudiante : estudiantes) {
-				if (estudiante.disponibilidad()) {
-					for (Profesor[] profesores : arrayProfesor) {
-						for (Profesor profesor : profesores) {
-							if (profesor.getMateriaImpartida() == this.materia) {
-								if (profesor.disponibilidad()) {
-									System.out.println(mostrarAprobados(arrayEstudiante));
-									return true;
-								}
-							}
+	public boolean darClase(ArrayList<Profesor> arrayProfesor, ArrayList<Estudiante> arrayEstudiante) {
+
+		for (Estudiante estudiante : arrayEstudiante) {
+			if (estudiante.disponibilidad()) {
+				for (Profesor profesor : arrayProfesor) {
+					if (profesor.getMateriaImpartida() == this.materia) {
+						if (profesor.disponibilidad()) {
+							System.out.println(mostrarAprobados(arrayEstudiante));
+							System.out.println("AULA CREADA");
+							return true;
 						}
 					}
 				}
 			}
 		}
+
 		return false;
 
 	}
 
-	public String mostrarAprobados(ArrayList<Estudiante[]> arrayEstudiante) {
+	public String mostrarAprobados(ArrayList<Estudiante> arrayEstudiante) {
 
 		ArrayList<Estudiante> arrayAprobados = new ArrayList<Estudiante>();
 
-		for (Estudiante[] estudiantes : arrayEstudiante) {
-			for (Estudiante estudiante : estudiantes) {
-				if (estudiante.getNota() >= 5) {
-					arrayAprobados.add(estudiante);
-				}
+		for (Estudiante estudiante : arrayEstudiante) {
+			if (estudiante.getNota() >= 5) {
+				arrayAprobados.add(estudiante);
 			}
 		}
 
