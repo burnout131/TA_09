@@ -90,7 +90,7 @@ public class Serie implements Entregable{
 		} else if (this.numeroTemporadas > ((Serie)a).numeroTemporadas) {
 			return 1;
 		} else {
-			return 0;
+			return 2;
 		}
 	}
 }
