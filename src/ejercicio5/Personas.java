@@ -31,8 +31,7 @@ public abstract class Personas {
 
 	@Override
 	public String toString() {
-		return "Personas [nombre=" + nombre + ", edad=" + edad + ", genero=" + genero + ", toString()="
-				+ super.toString() + "]";
+		return  "Nombre: "+nombre +  "  ";
 	}
 
 	public Genero getGenero() {

@@ -17,9 +17,6 @@ public class Aula {
 	public Aula() {
 
 	}
-	
-	
-	
 
 	@Override
 	public String toString() {
@@ -29,20 +26,23 @@ public class Aula {
 
 	public boolean darClase(ArrayList<Profesor> arrayProfesor, ArrayList<Estudiante> arrayEstudiante) {
 
+		System.out.println("\n--------------------------------------------------------");
 		for (Estudiante estudiante : arrayEstudiante) {
 			if (estudiante.disponibilidad()) {
 				for (Profesor profesor : arrayProfesor) {
 					if (profesor.getMateriaImpartida() == this.materia) {
 						if (profesor.disponibilidad()) {
-							System.out.println(mostrarAprobados(arrayEstudiante));
-							System.out.println("AULA CREADA");
+							System.out.println(profesor.toString());
+							System.out.println("Aula "+ idAula+" abierta correctamente.");
+							System.out.println("\nESTUDIANTES APROBADOS:\n"+mostrarAprobados(arrayEstudiante));
+							System.out.println("--------------------------------------------------------\n");
 							return true;
 						}
 					}
 				}
 			}
 		}
-
+		System.out.println("No fue posible abrir el aula.");
 		return false;
 
 	}

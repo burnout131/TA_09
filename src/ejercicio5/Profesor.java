@@ -20,6 +20,12 @@ public class Profesor extends Personas {
 		return disponible;
 	}
 
+	@Override
+	public String toString() {
+		return "Nombre profesor: "+nombre+ " Materia Impartida: " + getMateriaImpartida()
+				+ ";";
+	}
+
 	public Materia getMateriaImpartida() {
 		return materiaImpartida;
 	}

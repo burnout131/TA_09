@@ -30,7 +30,7 @@ public class Estudiante extends Personas {
 
 	@Override
 	public String toString() {
-		return "Estudiante [nota=" + nota + ", toString()=" + super.toString() + "]";
+		return "\n"+ super.toString() +"Nota: " + nota + "." ;
 	}
 
 }
