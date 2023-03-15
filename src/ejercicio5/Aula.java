@@ -33,7 +33,7 @@ public class Aula {
 	                    for (Profesor profesor : profesores) {
 	                        if (profesor.getMateriaImpartida() == this.materia) {
 	                            if (profesor.disponibilidad()) {
-	                            	System.out.println(mostrarAprobados(estudiantes));
+	                            	System.out.println(mostrarAprobados(arrayEstudiante));
 	                            	return true;
 	                            }
 	                        }
@@ -47,13 +47,18 @@ public class Aula {
 	}
 
 	public String mostrarAprobados(ArrayList<Estudiante[]> arrayEstudiante) {
+		
+		ArrayList<Estudiante> arrayAprobados = new ArrayList<Estudiante>();
+		
 		for (Estudiante[] estudiantes : arrayEstudiante) {
 			for (Estudiante estudiante : estudiantes) {
-				
+				if(estudiante.getNota()>=5) {
+					arrayAprobados.add(estudiante);
+				}
 			}
 		}
 
-		return arrayEstudiantes[1].toString();
+		return arrayAprobados.toString();
 	}
 
 }
