@@ -6,6 +6,13 @@ public abstract class Personas {
 	public Genero genero;
 	
 	
+	public Personas(String nombre, int edad, Genero genero) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.genero = genero;
+	}
+
+
 	public abstract boolean disponibilidad();
 
 
