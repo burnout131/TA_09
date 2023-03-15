@@ -5,7 +5,7 @@ public class Personas {
 	public int edad;
 	public Genero genero;
 	
-	abstract boolean disponibilidad(Object[] o) {
+	abstract boolean disponibilidad() {
 		
 	}
 }
