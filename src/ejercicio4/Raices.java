@@ -37,12 +37,13 @@ public class Raices {
 		}
 	}
 
-	public void calcular(double discriminante) {
+	public void calcular() {
+		double discriminante = getDiscriminante();
 		if (discriminante > 0) {
 			System.out.println("La ecuación tiene 2 soluciones:\n");
 			obtenerRaices();
 		} else if (discriminante == 0) {
-			System.out.println("La ecuación tiene 1 solución.\n");
+			System.out.println("La ecuación tiene 1 solución");
 			obtenerRaiz();
 		} else {
 			System.out.println("La ecuación no tiene solución.");
