@@ -14,6 +14,16 @@ public class Raices {
 		this.c = c;
 	}
 	
+	public double getDiscriminante() {
+		double discriminante = (Math.pow(b, 2) -4 * a*c);
+		return discriminante;
+	}
 	
-
+	public boolean tieneRaices(double discriminante) {
+		if (discriminante >= 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
