@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Aula {
 	private int idAula;
 	private int maxEstudiantes;
-	Materia materia;
+	private Materia materia;
 
 	public Aula(int idAula, int maxEstudiantes, Materia materia) {
 
