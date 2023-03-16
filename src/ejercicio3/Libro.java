@@ -5,14 +5,14 @@ public class Libro {
 	private String titulo;
 	private String autor;
 	private int numeroPaginas;
-	
+
 	public Libro(String ISBN, String titulo, String autor, int numeroPaginas) {
 		this.ISBN = ISBN;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.numeroPaginas = numeroPaginas;
 	}
-	
+
 	public Libro() {
 		this.ISBN = "";
 		this.titulo = "";
@@ -54,19 +54,19 @@ public class Libro {
 
 	@Override
 	public String toString() {
-		return "Titulo"+titulo+" (ISBN: " + ISBN + "; Autor: " + autor + "; Paginas: " + numeroPaginas+")";
+		return "Titulo " + titulo + " (ISBN: " + ISBN + "; Autor: " + autor + "; Paginas: " + numeroPaginas + ")";
 	}
-	
-	public void librosMasPaginas(Libro a, Libro b) {
-		if(a.numeroPaginas>b.numeroPaginas) {
-			System.out.println("El libro "+ a.toString()+" tiene más paginas que el libro "+b.toString()+".");
-		}else if(a.numeroPaginas<b.numeroPaginas) {
-			System.out.println("El libro "+ b.toString()+" tiene más paginas que el libro "+a.toString()+".");
-		}else {
-			System.out.println("El libro "+ a.toString()+" tiene la misma cantidad de páginas que el libro "+b.toString()+".");
+
+	public void librosMasPaginas(Libro b) {
+		if (this.numeroPaginas > b.numeroPaginas) {
+			System.out.println("El libro " + this.toString() + " tiene más paginas que el libro " + b.toString() + ".");
+		} else if (this.numeroPaginas < b.numeroPaginas) {
+			System.out.println("El libro " + b.toString() + " tiene más paginas que el libro " + this.toString() + ".");
+		} else {
+			System.out.println("El libro " + this.toString() + " tiene la misma cantidad de páginas que el libro "
+					+ b.toString() + ".");
 		}
-		
+
 	}
-	
-	
+
 }
