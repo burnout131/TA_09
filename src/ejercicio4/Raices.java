@@ -12,26 +12,30 @@ public class Raices {
 		this.b = b;
 		this.c = c;
 	}
-<<<<<<< HEAD
+	public boolean tieneRaices(double discriminante) {
+		if (discriminante >= 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-	public boolean tieneRaiz(double discriminante) {
-		if (discriminante == 0) {
-=======
 	
 	public double getDiscriminante() {
 		double discriminante = (Math.pow(b, 2) -4 * a*c);
 		return discriminante;
 	}
 	
-	public boolean tieneRaices(double discriminante) {
-		if (discriminante >= 0) {
->>>>>>> d8f9a3a13ceb2139d94eaba256a28591de8c0d7f
+	
+	
+	
+	public boolean tieneRaiz(double discriminante) {
+		if (discriminante == 0) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-<<<<<<< HEAD
 
 	public void calcular(double discriminante) {
 		if (discriminante > 0) {
@@ -44,6 +48,4 @@ public class Raices {
 
 	}
 
-=======
->>>>>>> d8f9a3a13ceb2139d94eaba256a28591de8c0d7f
 }
