@@ -43,10 +43,10 @@ public class Aula {
 				}
 			}
 		} else {
-			System.out.println("No hay alumnos suficientes para abrir el aula.");
+			System.out.println("No hay alumnos suficientes para abrir el aula "+idAula+" para la asignatura "+ materia+".");
 		}
 
-		System.out.println("No fue posible abrir el aula.");
+		System.out.println("No fue posible abrir el aula "+idAula+" para la materia "+materia+".");
 		return false;
 
 	}
