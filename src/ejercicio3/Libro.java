@@ -51,5 +51,16 @@ public class Libro {
 				+ super.toString() + "]";
 	}
 	
+	public void librosMasPaginas(Libro a, Libro b) {
+		if(a.numeroPaginas>b.numeroPaginas) {
+			System.out.println("El libro "+ a.toString()+" tiene más paginas que el libro "+b.toString()+".");
+		}else if(a.numeroPaginas<b.numeroPaginas) {
+			System.out.println("El libro "+ b.toString()+" tiene más paginas que el libro "+a.toString()+".");
+		}else {
+			System.out.println("El libro "+ a.toString()+" tiene la misma cantidad de páginas que el libro "+b.toString()+".");
+		}
+		
+	}
+	
 	
 }
