@@ -54,8 +54,7 @@ public class Libro {
 
 	@Override
 	public String toString() {
-		return "Libro con ISBN=" + ISBN + ", autor=" + autor + ", numeroPaginas=" + numeroPaginas + ", toString()="
-				+ super.toString() + "]";
+		return "Titulo"+titulo+" (ISBN: " + ISBN + "; Autor: " + autor + "; Paginas: " + numeroPaginas+")";
 	}
 	
 	public void librosMasPaginas(Libro a, Libro b) {
