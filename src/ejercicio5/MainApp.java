@@ -11,9 +11,9 @@ public class MainApp {
 		ArrayList<Profesor> prof = new ArrayList<Profesor>();
 		
 		//Creamos aulas
-		Aula aula = new Aula(1, 30, Materia.MATEMATICAS);
-		Aula aula2 = new Aula(2, 30, Materia.FISICA);
-		Aula aula3 = new Aula(3, 30, Materia.FILOSOFIA);
+		Aula aula = new Aula(1, 5, Materia.MATEMATICAS);
+		Aula aula2 = new Aula(2, 5, Materia.FISICA);
+		Aula aula3 = new Aula(3, 5, Materia.FILOSOFIA);
 		
 		//Creamos estudiantes
 		Estudiante student = new Estudiante("Roger", 28, Genero.MASCULINO, 10.0);
