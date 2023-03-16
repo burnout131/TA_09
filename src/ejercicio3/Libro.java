@@ -12,6 +12,13 @@ public class Libro {
 		this.autor = autor;
 		this.numeroPaginas = numeroPaginas;
 	}
+	
+	public Libro() {
+		this.ISBN = "";
+		this.titulo = "";
+		this.autor = "";
+		this.numeroPaginas = 0;
+	}
 
 	public String getISBN() {
 		return ISBN;
