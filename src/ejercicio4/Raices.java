@@ -40,10 +40,10 @@ public class Raices {
 			System.out.println("La ecuación tiene 2 soluciones:\n");
 			obtenerRaices();
 		} else if (discriminante == 0) {
-			System.out.println("La ecuación tiene 1 solución");
+			System.out.println("La ecuación tiene 1 solución\n");
 			obtenerRaiz();
 		} else {
-			System.out.println("La ecuación no tiene solución.");
+			System.out.println("La ecuación no tiene solución.\n");
 		}
 	}
 
