@@ -47,6 +47,13 @@ public class Peliculas {
 	}
 
 
+	@Override
+	public String toString() {
+		return  titulo + " (Duracion: "+ duracion + ", Edad minima: " + edadMin + ", Director: "
+				+ director + ")";
+	}
+
+
 	public String getDirector() {
 		return director;
 	}
