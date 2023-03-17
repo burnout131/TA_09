@@ -18,22 +18,28 @@ public class Aula {
 
 	}
 
+	//Metodo darClase para averiguar si cumplen los requisitos para abrir un Aula y dar clase
 	public boolean darClase(ArrayList<Profesor> arrayProfesor, ArrayList<Estudiante> arrayEstudiante) {
+		//Creamos un contador para comprobar el requisito de estudiantes minimos para abrir aula
 		int contadorEstudiantes = 0;
 
 		System.out.println("\n--------------------------------------------------------");
 		for (Estudiante estudiante : arrayEstudiante) {
+			
 			if (estudiante.disponibilidad()) {
 				contadorEstudiantes++;
 			}
 		}
+		//Verificamos si hay estudiantes suficientes llamando al metodo disponibilidad
 		if (contadorEstudiantes > 0.5 * maxEstudiantes) {
 			for (Profesor profesor : arrayProfesor) {
+				//Comprobamos si hay profesor que imparte la materia disponible
 				if (profesor.getMateriaImpartida() == this.materia) {
 					if (profesor.disponibilidad()) {
 						System.out.println(profesor.toString());
 						System.out.println(
 								"Aula " + idAula + " abierta correctamente para la asigntatura de " + materia + ".");
+						//Imprimimos los estudiantes aprobados
 						System.out.println("\nESTUDIANTES APROBADOS:\n" + mostrarAprobados(arrayEstudiante));
 						System.out.println("--------------------------------------------------------\n");
 						return true;
@@ -50,7 +56,8 @@ public class Aula {
 		return false;
 
 	}
-
+	
+	//Creamos un metodo para imprimir los estudiantes aprobados y su nota
 	public String mostrarAprobados(ArrayList<Estudiante> arrayEstudiante) {
 
 		ArrayList<Estudiante> arrayAprobados = new ArrayList<Estudiante>();

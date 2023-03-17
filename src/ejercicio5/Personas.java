@@ -1,9 +1,11 @@
 package ejercicio5;
 
+//Creamos una clase padre abstracta para que profesor y estudiantes la extiendan y aplique el metodo disponibilidad
 public abstract class Personas {
-	public String nombre;
-	public int edad;
-	public Genero genero;
+	protected String nombre;
+	protected int edad;
+	//establecemos genero como enum
+	protected Genero genero;
 
 	public Personas(String nombre, int edad, Genero genero) {
 		this.nombre = nombre;

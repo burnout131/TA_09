@@ -17,6 +17,7 @@ public class Estudiante extends Personas {
 		this.nota = nota;
 	}
 
+	//Concretamos el metodo disponibilidad de la clase padre con los requisitos de estudiante
 	@Override
 	public boolean disponibilidad() {
 		boolean disponible = true;
