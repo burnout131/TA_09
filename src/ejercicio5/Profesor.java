@@ -3,7 +3,7 @@ package ejercicio5;
 public class Profesor extends Personas {
 		
 	//Establecemos materia como enum
-	protected Materia materiaImpartida;
+	private Materia materiaImpartida;
 
 	public Profesor(String nombre, int edad, Genero genero, Materia materia) {
 		super(nombre, edad, genero);
