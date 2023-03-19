@@ -68,6 +68,8 @@ public class Cine {
 					System.out.println(" no cumple los requisitos de edad mínima.");
 				}
 			}
+		}else {
+			System.out.println("La sala ya esta completa");
 		}
 		
 		return asientoAsignado;

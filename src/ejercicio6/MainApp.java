@@ -15,18 +15,20 @@ public class MainApp {
 	Espectador espectAleatorio = new Espectador();
 	
 	Espectador[] espectadores= new Espectador[80];
+	for (int i=0;i<espectadores.length;i++) {
+		espectadores [i]= espectAleatorio;
+	}
 	
 	System.out.println("Abierta sala para película "+sala1.getPelicula() + "con los siguientes espectadores:\n" );
 	
 	for (int i=0;i<espectadores.length;i++) {
-		espectadores [i]= espectAleatorio;
 		
 		if(sala1.AssignarAsiento(espectadores[i])) {
-			sala1.AssignarAsiento(espectadores[i]);
-		}else {
-			i--;
+			espectadores [i]= espectAleatorio;
 		}
-	}
+			
+		}
+	
 	
 	
 //	sala3D.AssignarAsiento(espectAleatorio);
