@@ -59,7 +59,8 @@ public class Cine {
 			// Asigna el asiento al Espectador
 			EspectadoresSala[posicion / COLUMNAS][posicion % COLUMNAS] = espectador;
 			asientoAsignado = true;
-			System.out.println(espectador.getNombre());
+			imprimirSala(espectador);
+			
 			}else {
 				System.out.println("El espectacor "+espectador.getNombre()+ " no puede entrar en la sala porque");
 				if(espectador.getDinero()<this.precio) {
@@ -73,6 +74,19 @@ public class Cine {
 		}
 		
 		return asientoAsignado;
+	}
+	
+	public void imprimirSala(Espectador espectadores) {
+		// Recorrer cada fila del arreglo
+				for (int i = 0; i < EspectadoresSala.length; i++) {
+				    // Recorrer cada columna de la fila actual
+				    for (int j = 0; j < EspectadoresSala[i].length; j++) {
+				        // Imprimir el valor del elemento actual
+				        System.out.print(EspectadoresSala[i][j] + " ");
+				    }
+				    // Salto de línea al final de cada fila
+				    System.out.println();
+				}
 	}
 
 	public Peliculas getPelicula() {
@@ -95,5 +109,14 @@ public class Cine {
 	public String toString() {
 		return "Cine [pelicula=" + pelicula + ", precio=" + precio + ", toString()=" + super.toString() + "]";
 	}
+
+	public Espectador[][] getEspectadoresSala() {
+		return EspectadoresSala;
+	}
+
+	public void setEspectadoresSala(Espectador[][] espectadoresSala) {
+		EspectadoresSala = espectadoresSala;
+	}
+	
 
 }
