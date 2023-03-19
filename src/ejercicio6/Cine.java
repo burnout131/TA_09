@@ -49,16 +49,27 @@ public class Cine {
 				}
 			}
 		}
-
+		
 		// Comprueba si hay asientos vacios
 		if (!asientosVacios.isEmpty()) {
 			// Selecciona un asiento aleatorio
 			int posicion = rand.nextInt(asientosVacios.size());
+			if(espectador.getDinero()>this.precio && espectador.getEdad()>=pelicula.getEdadMin()) {
 
 			// Asigna el asiento al Espectador
 			EspectadoresSala[posicion / COLUMNAS][posicion % COLUMNAS] = espectador;
 			asientoAsignado = true;
+			System.out.println(espectador.getNombre());
+			}else {
+				System.out.println("El espectacor "+espectador.getNombre()+ " no puede entrar en la sala porque");
+				if(espectador.getDinero()<this.precio) {
+					System.out.println(" no tiene dinero suficiente.");
+				}else if(espectador.getEdad()<pelicula.getEdadMin()) {
+					System.out.println(" no cumple los requisitos de edad mínima.");
+				}
+			}
 		}
+		
 		return asientoAsignado;
 	}
 
