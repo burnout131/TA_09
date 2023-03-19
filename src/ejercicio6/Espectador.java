@@ -6,11 +6,23 @@ public class Espectador {
 	private String nombre;
 	private int edad;
 	private double dinero;
+	private boolean estaSentado;
+	private int[] asientoAsignado;
+	
+	public Espectador() {
+		this.nombre = generaNombre();
+		this.edad = generaEdad();
+		this.dinero = generaDinero();
+		this.estaSentado = false;
+		this.asientoAsignado = new int[] {0,0};
+	}
 
 	public Espectador(String nombre, int edad, double dinero) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.dinero = dinero;
+		this.estaSentado = false;
+		this.asientoAsignado = new int[] {0,0};
 	}
 
 	public String getNombre() {
