@@ -9,8 +9,9 @@ public class Cine {
 
 	private Peliculas pelicula;
 	private double precio;
-	// Array de FILAS y COLUMNAS que simulan los asientos, se le asignaran espectadores
-	private Espectador[][] EspectadoresSala = new Espectador[FILAS][COLUMNAS];
+	// Array de FILAS y COLUMNAS que simulan los asientos, se le asignan
+	// espectadores
+	private Espectador[][] espectadoresSala = new Espectador[FILAS][COLUMNAS];
 
 	public Cine(Peliculas pelicula, double precio) {
 		this.pelicula = pelicula;
@@ -22,22 +23,18 @@ public class Cine {
 	public void VaciarAsientos() {
 		for (int i = 0; i < FILAS; i++) {
 			for (int j = 0; j < COLUMNAS; j++) {
-				EspectadoresSala[i][j] = null;
+				espectadoresSala[i][j] = null;
 			}
 		}
 	}
 
 	// Indica si el asiento tiene un Espectador asignado o si esta vacio (null)
 	public boolean AsientoOcupado(int fila, int columna) {
-		return EspectadoresSala[fila][columna] != null;
+		return espectadoresSala[fila][columna] != null;
 	}
 
-	/*
-	 * Asigna un asiento vacio a Espectador. Devuelve un boolean indicando si se ha
-	 * podido asignar un asiento
-	 */
-	public boolean AssignarAsiento(Espectador espectador) {
-		boolean asientoAsignado = false;
+	// Asigna un asiento vacio a Espectador
+	public void AssignarAsiento(Espectador espectador) {
 		Random rand = new Random();
 		ArrayList<Integer> asientosVacios = new ArrayList<Integer>();
 
@@ -49,44 +46,43 @@ public class Cine {
 				}
 			}
 		}
-		
+
 		// Comprueba si hay asientos vacios
 		if (!asientosVacios.isEmpty()) {
 			// Selecciona un asiento aleatorio
 			int posicion = rand.nextInt(asientosVacios.size());
-			if(espectador.getDinero()>this.precio && espectador.getEdad()>=pelicula.getEdadMin()) {
-
-			// Asigna el asiento al Espectador
-			EspectadoresSala[posicion / COLUMNAS][posicion % COLUMNAS] = espectador;
-			asientoAsignado = true;
-			imprimirSala(espectador);
-			
-			}else {
-				System.out.println("El espectacor "+espectador.getNombre()+ " no puede entrar en la sala porque");
-				if(espectador.getDinero()<this.precio) {
+			if (espectador.getDinero() > this.precio && espectador.getEdad() >= pelicula.getEdadMin()) {
+				// Asigna el asiento al Espectador
+				espectadoresSala[posicion / COLUMNAS][posicion % COLUMNAS] = espectador;
+			} else {
+				// Muestra porque al Espectador no se le puede asignar un asiento
+				System.out.print("El espectador " + espectador + " no puede entrar en la sala porque");
+				if (espectador.getDinero() < this.precio) {
 					System.out.println(" no tiene dinero suficiente.");
-				}else if(espectador.getEdad()<pelicula.getEdadMin()) {
+				} else if (espectador.getEdad() < pelicula.getEdadMin()) {
 					System.out.println(" no cumple los requisitos de edad mínima.");
 				}
 			}
-		}else {
+		} else {
 			System.out.println("La sala ya esta completa");
 		}
-		
-		return asientoAsignado;
 	}
-	
-	public void imprimirSala(Espectador espectadores) {
+
+	public void imprimirSala() {
 		// Recorrer cada fila del arreglo
-				for (int i = 0; i < EspectadoresSala.length; i++) {
-				    // Recorrer cada columna de la fila actual
-				    for (int j = 0; j < EspectadoresSala[i].length; j++) {
-				        // Imprimir el valor del elemento actual
-				        System.out.print(EspectadoresSala[i][j] + " ");
-				    }
-				    // Salto de línea al final de cada fila
-				    System.out.println();
+		for (int i = 0; i < espectadoresSala.length; i++) {
+			// Recorrer cada columna de la fila actual
+			for (int j = 0; j < espectadoresSala[i].length; j++) {
+				if (espectadoresSala[i][j] != null) {
+					// Imprimir el valor del elemento actual
+					System.out.print(espectadoresSala[i][j] + " ");
+				} else {
+					System.out.print(" O ");
 				}
+			}
+			// Salto de línea al final de cada fila
+			System.out.println();
+		}
 	}
 
 	public Peliculas getPelicula() {
@@ -111,12 +107,10 @@ public class Cine {
 	}
 
 	public Espectador[][] getEspectadoresSala() {
-		return EspectadoresSala;
+		return espectadoresSala;
 	}
 
 	public void setEspectadoresSala(Espectador[][] espectadoresSala) {
-		EspectadoresSala = espectadoresSala;
+		espectadoresSala = espectadoresSala;
 	}
-	
-
 }
