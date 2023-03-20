@@ -30,7 +30,7 @@ public class MainApp {
 			sala1.AssignarAsiento(espectadores.get(i));
 		}
 
-		System.out.println("\nAbierta sala (precio entrada: " + sala1.getPrecio() + "€) para película "
+		System.out.println("\nAbierta sala (precio entrada: " + sala1.getPrecio() + " euros) para pelicula "
 				+ sala1.getPelicula() + " con los siguientes espectadores:\n");
 
 		sala1.imprimirSala();

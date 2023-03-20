@@ -60,7 +60,7 @@ public class Cine {
 				if (espectador.getDinero() < this.precio) {
 					System.out.println(" no tiene dinero suficiente.");
 				} else if (espectador.getEdad() < pelicula.getEdadMin()) {
-					System.out.println(" no cumple los requisitos de edad mínima.");
+					System.out.println(" no cumple los requisitos de edad minima.");
 				}
 			}
 		} else {
@@ -80,7 +80,7 @@ public class Cine {
 					System.out.print(" O ");
 				}
 			}
-			// Salto de línea al final de cada fila
+			// Salto de linea al final de cada fila
 			System.out.println();
 		}
 	}
@@ -111,6 +111,6 @@ public class Cine {
 	}
 
 	public void setEspectadoresSala(Espectador[][] espectadoresSala) {
-		espectadoresSala = espectadoresSala;
+		this.espectadoresSala = espectadoresSala;
 	}
 }
