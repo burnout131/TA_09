@@ -69,15 +69,21 @@ public class Cine {
 	}
 
 	public void imprimirSala() {
+		System.out.printf("%2S", "");
+		for (int i = 0; i < espectadoresSala[0].length; i++) {
+			System.out.printf("%9c", (char) (i + 65));
+		}
+		System.out.println();
 		// Recorrer cada fila del arreglo
 		for (int i = 0; i < espectadoresSala.length; i++) {
 			// Recorrer cada columna de la fila actual
+			System.out.print(espectadoresSala.length - i + " ");
 			for (int j = 0; j < espectadoresSala[i].length; j++) {
 				if (espectadoresSala[i][j] != null) {
 					// Imprimir el valor del elemento actual
-					System.out.print(espectadoresSala[i][j] + " ");
+					System.out.printf("%9S",espectadoresSala[i][j].getNombre());
 				} else {
-					System.out.print(" O ");
+					System.out.printf("%9S","O");
 				}
 			}
 			// Salto de linea al final de cada fila

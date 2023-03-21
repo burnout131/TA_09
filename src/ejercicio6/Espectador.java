@@ -8,13 +8,13 @@ public class Espectador {
 	private double dinero;
 	private boolean estaSentado;
 	private int[] asientoAsignado;
-	
+
 	public Espectador() {
 		this.nombre = generaNombre();
 		this.edad = generaEdad();
 		this.dinero = generaDinero();
 		this.estaSentado = false;
-		this.asientoAsignado = new int[] {0,0};
+		this.asientoAsignado = new int[] { 0, 0 };
 	}
 
 	public Espectador(String nombre, int edad, double dinero) {
@@ -22,7 +22,7 @@ public class Espectador {
 		this.edad = edad;
 		this.dinero = dinero;
 		this.estaSentado = false;
-		this.asientoAsignado = new int[] {0,0};
+		this.asientoAsignado = new int[] { 0, 0 };
 	}
 
 	public String getNombre() {
@@ -47,6 +47,22 @@ public class Espectador {
 
 	public void setDinero(double dinero) {
 		this.dinero = dinero;
+	}
+
+	public boolean isEstaSentado() {
+		return estaSentado;
+	}
+
+	public void setEstaSentado(boolean estaSentado) {
+		this.estaSentado = estaSentado;
+	}
+
+	public int[] getAsientoAsignado() {
+		return asientoAsignado;
+	}
+
+	public void setAsientoAsignado(int[] asientoAsignado) {
+		this.asientoAsignado = asientoAsignado;
 	}
 
 	@Override
