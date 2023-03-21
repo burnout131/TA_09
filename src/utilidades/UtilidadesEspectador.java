@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class UtilidadesEspectador {
 
-	private String generaNombre() {
+	public static String generaNombre() {
 		String[] nombres = { "Andres", "Carla", "Silvia", "Tomas", "Iris", "Marc", "Roger", "Paula", "Laura", "Ruben" };
 
 		Random random = new Random();
@@ -14,7 +14,7 @@ public class UtilidadesEspectador {
 		return nombreRandom;
 	}
 
-	private int generaEdad() {
+	public static int generaEdad() {
 		int min = 3;
 		int max = 100;
 		Random edadRandom = new Random();
@@ -23,7 +23,7 @@ public class UtilidadesEspectador {
 		return edad;
 	}
 
-	private double generaDinero() {
+	public static double generaDinero() {
 		double min = 0;
 		double max = 20;
 
